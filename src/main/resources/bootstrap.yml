@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: simple-rest-app-with-config
+    description: A simple REST service application using config server
+    version: "@project.version@"
+    majorVersion: ${APP_VERSION:1}
+  cloud:
+    config:
+      label: ${CONFIG_SERVER_LABEL:master}
+eureka:
+  instance:
+    appname: ${spring.application.name}-v${spring.application.majorVersion}
+    virtualHostName: ${spring.application.name}-v${spring.application.majorVersion}
+    securePortEnabled: false

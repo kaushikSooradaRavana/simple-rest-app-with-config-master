@@ -1,0 +1,28 @@
+spring:
+  http:
+    gzip:
+      mimeTypes: application/json
+server:
+  contextPath: /${spring.application.name}/v${spring.application.majorVersion}
+  port: ${port:8180}
+endpoints:
+  health:
+    sensitive: false
+management:
+  contextPath: /admin
+  security:
+    enabled: false
+security:
+  basic:
+    enabled: false
+info:
+  build:
+    artifact: 'simple-rest-app-with-config'
+    name: 'simple-rest-app-with-config'
+    description: 'Parent pom providing dependency and plugin management for applications
+		built with Maven'
+    version: '1.0.0-SNAPSHOT'
+contact:
+  name: Gregor Zurowski
+  url: http://www.cinteo.com
+  email: gregor@zurowski.net
